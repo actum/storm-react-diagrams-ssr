@@ -59,13 +59,13 @@ export class DefaultLinkWidget extends BaseWidget<DefaultLinkProps, DefaultLinkS
 	}
 
 	componentDidUpdate() {
-		if (this.props.link.labels.length > 0) {
+		if (this.props.link.labels.length > 0 && typeof window !== 'undefined') {
 			window.requestAnimationFrame(this.calculateAllLabelPosition.bind(this));
 		}
 	}
 
 	componentDidMount() {
-		if (this.props.link.labels.length > 0) {
+		if (this.props.link.labels.length > 0 && typeof window !== 'undefined') {
 			window.requestAnimationFrame(this.calculateAllLabelPosition.bind(this));
 		}
 	}

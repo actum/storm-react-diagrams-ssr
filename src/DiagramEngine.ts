@@ -70,7 +70,7 @@ export class DiagramEngine extends BaseEntity<DiagramEngineListener> {
 			Toolkit.TESTING_UID = 0;
 
 			//pop it onto the window so our E2E helpers can find it
-			if (window) {
+			if (typeof window !== 'undefined') {
 				(window as any)["diagram_instance"] = this;
 			}
 		}

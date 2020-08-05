@@ -77,9 +77,12 @@ export class DiagramWidget extends BaseWidget<DiagramProps, DiagramState> {
 	componentWillUnmount() {
 		this.props.diagramEngine.removeListener(this.state.diagramEngineListener);
 		this.props.diagramEngine.setCanvas(null);
-		window.removeEventListener("keyup", this.onKeyUpPointer);
-		window.removeEventListener("mouseUp", this.onMouseUp);
-		window.removeEventListener("mouseMove", this.onMouseMove);
+
+		if (typeof window !== 'undefined') {
+			window.removeEventListener("keyup", this.onKeyUpPointer);
+			window.removeEventListener("mouseUp", this.onMouseUp);
+			window.removeEventListener("mouseMove", this.onMouseMove);			
+		}
 	}
 
 	componentWillReceiveProps(nextProps: DiagramProps) {
@@ -125,10 +128,12 @@ export class DiagramWidget extends BaseWidget<DiagramProps, DiagramState> {
 			})
 		});
 
-		window.addEventListener("keyup", this.onKeyUpPointer, false);
+		if (typeof window !== 'undefined') {
+			window.addEventListener("keyup", this.onKeyUpPointer, false);
+		}
 
 		// dont focus the window when in test mode - jsdom fails
-		if (process.env.NODE_ENV !== "test") {
+		if (process.env.NODE_ENV !== "test" && typeof window !== 'undefined') {
 			window.focus();
 		}
 	}
