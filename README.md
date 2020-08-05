@@ -1,4 +1,14 @@
-# STORM React Diagrams
+# !!! NOTICE !!! 
+
+This is a fork of deprecated version of [React Diagrams library](https://github.com/projectstorm/react-diagrams/tree/v5.3.2).
+
+This fork is implementing safe checking of `window` existence so it does not break SSR.
+
+Below is original README.md of React Diagrams
+
+---
+
+## STORM React Diagrams
 
 **PSA**: React Diagrams is currently getting a bit of a rewrite to enable much more advanced features. To see the new foundation WIP visit [https://github.com/projectstorm/react-canvas](https://github.com/projectstorm/react-canvas).
 
