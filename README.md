@@ -1,6 +1,6 @@
 # !!! NOTICE !!! 
 
-This is a fork of deprecated version of [React Diagrams library](https://github.com/projectstorm/react-diagrams/tree/v5.3.2).
+This is a fork of deprecated version of [React Diagrams library v5.2.1](https://github.com/projectstorm/react-diagrams/releases/tag/v5.2.1).
 
 This fork is implementing safe checking of `window` existence so it does not break SSR.
 
